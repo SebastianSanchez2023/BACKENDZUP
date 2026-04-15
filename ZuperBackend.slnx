@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ZuperBackend.API/ZuperBackend.API.csproj" />
+  <Project Path="ZuperBackend.Application/ZuperBackend.Application.csproj" />
+  <Project Path="ZuperBackend.Domain/ZuperBackend.Domain.csproj" />
+  <Project Path="ZuperBackend.Infrastructure/ZuperBackend.Infrastructure.csproj" />
+</Solution>
