@@ -1,15 +1,49 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using ZuperBackend.Infrastructure.Configuration;
 using ZuperBackend.Infrastructure.Persistence;
+using ZuperBackend.Infrastructure.Seeding;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Agregar servicios de infraestructura (DbContext, etc.)
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
+// Configuración de autenticación JWT
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var secretKey = jwtSettings["Secret"];
+
+builder.Services
+    .AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!)),
+            ValidateIssuer = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidateAudience = true,
+            ValidAudience = jwtSettings["Audience"],
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+// Agregar autorización
+builder.Services.AddAuthorization();
+
 // Add services to the container.
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", corsPolicyBuilder =>
@@ -30,6 +64,9 @@ if (app.Environment.IsDevelopment())
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<ZuperBackendDbContext>();
         await dbContext.Database.MigrateAsync();
+        
+        // Sembrar datos iniciales
+        await DbSeeder.SeedAsync(dbContext);
     }
 }
 
@@ -43,9 +80,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
-// Rutas de prueba
-app.MapGet("/api/health", () => Results.Ok(new { status = "API is healthy", timestamp = DateTime.UtcNow }))
-    .WithName("Health")
-    .WithOpenApi();
+// Middleware de autenticación y autorización
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();

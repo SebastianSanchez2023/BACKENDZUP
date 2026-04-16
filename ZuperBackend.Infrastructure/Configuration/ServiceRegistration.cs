@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ZuperBackend.Application.Services.Auth;
 using ZuperBackend.Infrastructure.Persistence;
+using ZuperBackend.Infrastructure.Services.Auth;
 
 namespace ZuperBackend.Infrastructure.Configuration;
 
@@ -18,6 +20,7 @@ public static class ServiceRegistration
         IConfiguration configuration)
     {
         AddPersistence(services, configuration);
+        AddAuthenticationServices(services);
 
         return services;
     }
@@ -56,5 +59,14 @@ public static class ServiceRegistration
             options.LogTo(Console.WriteLine);
 #endif
         });
+    }
+
+    /// <summary>
+    /// Registra servicios de autenticación y autorización
+    /// </summary>
+    private static void AddAuthenticationServices(IServiceCollection services)
+    {
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
     }
 }

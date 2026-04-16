@@ -85,6 +85,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.25, )"
@@ -380,6 +384,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Application\\ZuperBackend.Application.csproj": {
+                "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Application\\ZuperBackend.Application.csproj"
+              },
               "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Domain\\ZuperBackend.Domain.csproj": {
                 "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Domain\\ZuperBackend.Domain.csproj"
               }
@@ -415,6 +422,18 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

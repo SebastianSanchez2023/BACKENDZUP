@@ -16,3 +16,5 @@ C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\obj\Debug\ne
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\obj\Debug\net8.0\ZuperBackend.Infrastructure.pdb
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\obj\Debug\net8.0\ZuperBackend.Infrastructure.genruntimeconfig.cache
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\obj\Debug\net8.0\ref\ZuperBackend.Infrastructure.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\bin\Debug\net8.0\ZuperBackend.Application.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Infrastructure\bin\Debug\net8.0\ZuperBackend.Application.pdb
