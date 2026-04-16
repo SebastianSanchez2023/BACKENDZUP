@@ -1,0 +1,13 @@
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\bin\Debug\net8.0\ZuperBackend.Domain.deps.json
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\bin\Debug\net8.0\ZuperBackend.Domain.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\bin\Debug\net8.0\ZuperBackend.Domain.pdb
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.csproj.AssemblyReference.cache
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.AssemblyInfoInputs.cache
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.AssemblyInfo.cs
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.sourcelink.json
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\refint\ZuperBackend.Domain.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ZuperBackend.Domain.pdb
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.Domain\obj\Debug\net8.0\ref\ZuperBackend.Domain.dll
