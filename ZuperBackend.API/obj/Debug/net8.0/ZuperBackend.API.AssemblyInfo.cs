@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZuperBackend.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77b2bf2c10a682e5ffdb8a877a2f32ba8b70a12f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72e3626cca4a7470d838e20d6cb68e401b53ded3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZuperBackend.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZuperBackend.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
