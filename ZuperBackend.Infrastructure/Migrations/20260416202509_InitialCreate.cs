@@ -96,8 +96,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                         name: "FK_Assets_Tenants_TenantId",
                         column: x => x.TenantId,
                         principalTable: "Tenants",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -129,8 +128,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                         name: "FK_Users_Tenants_TenantId",
                         column: x => x.TenantId,
                         principalTable: "Tenants",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -204,8 +202,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                         name: "FK_Incidents_Tenants_TenantId",
                         column: x => x.TenantId,
                         principalTable: "Tenants",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Incidents_Users_ReportedBy",
                         column: x => x.ReportedBy,

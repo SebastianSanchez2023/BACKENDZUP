@@ -588,7 +588,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.HasOne("ZuperBackend.Domain.Entities.Tenant", "Tenant")
                         .WithMany("Assets")
                         .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Tenant");
@@ -633,7 +633,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.HasOne("ZuperBackend.Domain.Entities.Tenant", "Tenant")
                         .WithMany("Incidents")
                         .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Asset");
@@ -659,7 +659,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.HasOne("ZuperBackend.Domain.Entities.Tenant", "Tenant")
                         .WithMany("Users")
                         .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Tenant");
