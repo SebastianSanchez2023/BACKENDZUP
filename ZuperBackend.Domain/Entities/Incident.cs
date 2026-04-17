@@ -18,7 +18,7 @@ public class Incident : BaseEntity
     /// <summary>
     /// Identificador del usuario que reportó la incidencia.
     /// </summary>
-    public required Guid ReportedBy { get; set; }
+    public Guid? ReportedBy { get; set; }
 
     /// <summary>
     /// Categoría de la incidencia (hardware, software, conectividad, etc.).
