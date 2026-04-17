@@ -24,6 +24,8 @@ public class ZuperBackendDbContext : DbContext
     public DbSet<IncidentAttachment> IncidentAttachments { get; set; } = null!;
     public DbSet<ExternalLink> ExternalLinks { get; set; } = null!;
     public DbSet<AuditLog> AuditLogs { get; set; } = null!;
+    public DbSet<DiagnosisNode> DiagnosisNodes { get; set; } = null!;
+    public DbSet<DiagnosisOption> DiagnosisOptions { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -123,6 +125,32 @@ public class ZuperBackendDbContext : DbContext
             entity.Property(e => e.ActionType).IsRequired().HasMaxLength(50);
             entity.Property(e => e.EntityType).IsRequired().HasMaxLength(100);
             entity.Property(e => e.Result).IsRequired().HasMaxLength(50);
+        });
+
+        // Configuración de DiagnosisNode
+        modelBuilder.Entity<DiagnosisNode>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.HasIndex(e => e.NodeCode).IsUnique();
+            entity.Property(e => e.NodeCode).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Question).IsRequired();
+            entity.Property(e => e.HelpText).HasMaxLength(500);
+            entity.HasMany(e => e.Options).WithOne(o => o.DiagnosisNode).HasForeignKey(o => o.DiagnosisNodeId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Configuración de DiagnosisOption
+        modelBuilder.Entity<DiagnosisOption>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.HasIndex(e => new { e.DiagnosisNodeId, e.DisplayOrder });
+            entity.Property(e => e.Label).IsRequired().HasMaxLength(255);
+            entity.Property(e => e.ActionCode).HasMaxLength(50);
+            entity.Property(e => e.ActionDescription).HasMaxLength(500);
+            // Relación con el siguiente nodo (si existe)
+            entity.HasOne(e => e.NextNode)
+                .WithMany()
+                .HasForeignKey(e => e.NextNodeId)
+                .OnDelete(DeleteBehavior.NoAction);
         });
 
     }

@@ -12,8 +12,8 @@ using ZuperBackend.Infrastructure.Persistence;
 namespace ZuperBackend.Infrastructure.Migrations
 {
     [DbContext(typeof(ZuperBackendDbContext))]
-    [Migration("20260416202509_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260417201449_AddDiagnosisNodeAndOption")]
+    partial class AddDiagnosisNodeAndOption
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -238,6 +238,118 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.ToTable("AuditLogs");
                 });
 
+            modelBuilder.Entity("ZuperBackend.Domain.Entities.DiagnosisNode", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HelpText")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NodeCode")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NodeCode")
+                        .IsUnique();
+
+                    b.ToTable("DiagnosisNodes");
+                });
+
+            modelBuilder.Entity("ZuperBackend.Domain.Entities.DiagnosisOption", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ActionCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ActionDescription")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("DiagnosisNodeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFinalAction")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<Guid?>("NextNodeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NextNodeId");
+
+                    b.HasIndex("DiagnosisNodeId", "DisplayOrder");
+
+                    b.ToTable("DiagnosisOptions");
+                });
+
             modelBuilder.Entity("ZuperBackend.Domain.Entities.ExternalLink", b =>
                 {
                     b.Property<Guid>("Id")
@@ -349,7 +461,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("ReportedBy")
+                    b.Property<Guid?>("ReportedBy")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ResolutionNotes")
@@ -608,6 +720,24 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.Navigation("Asset");
                 });
 
+            modelBuilder.Entity("ZuperBackend.Domain.Entities.DiagnosisOption", b =>
+                {
+                    b.HasOne("ZuperBackend.Domain.Entities.DiagnosisNode", "DiagnosisNode")
+                        .WithMany("Options")
+                        .HasForeignKey("DiagnosisNodeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ZuperBackend.Domain.Entities.DiagnosisNode", "NextNode")
+                        .WithMany()
+                        .HasForeignKey("NextNodeId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("DiagnosisNode");
+
+                    b.Navigation("NextNode");
+                });
+
             modelBuilder.Entity("ZuperBackend.Domain.Entities.ExternalLink", b =>
                 {
                     b.HasOne("ZuperBackend.Domain.Entities.Incident", "Incident")
@@ -630,8 +760,7 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.HasOne("ZuperBackend.Domain.Entities.User", "ReportedByUser")
                         .WithMany("CreatedIncidents")
                         .HasForeignKey("ReportedBy")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("ZuperBackend.Domain.Entities.Tenant", "Tenant")
                         .WithMany("Incidents")
@@ -673,6 +802,11 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.Navigation("Incidents");
 
                     b.Navigation("QRCodes");
+                });
+
+            modelBuilder.Entity("ZuperBackend.Domain.Entities.DiagnosisNode", b =>
+                {
+                    b.Navigation("Options");
                 });
 
             modelBuilder.Entity("ZuperBackend.Domain.Entities.Incident", b =>
