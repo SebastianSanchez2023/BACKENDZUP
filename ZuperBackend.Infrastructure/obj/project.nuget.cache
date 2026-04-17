@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T0NSvCzqIwE=",
+  "dgSpecHash": "LzDTVqfFwXo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+  "projectFilePath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\escuela03\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -106,9 +106,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "ZuperBackend.Domain depende de System.IdentityModel.Tokens.Jwt (>= 7.1.0), pero no se encontró System.IdentityModel.Tokens.Jwt 7.1.0. System.IdentityModel.Tokens.Jwt 7.1.2 se resolvió en su lugar.",
-      "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+      "projectPath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+      "filePath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net8.0"
