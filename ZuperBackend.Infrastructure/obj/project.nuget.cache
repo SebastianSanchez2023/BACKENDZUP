@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LzDTVqfFwXo=",
+  "dgSpecHash": "D9kyb5SATUQ=",
   "success": true,
-  "projectFilePath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\escuela03\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -58,6 +58,7 @@
     "C:\\Users\\escuela03\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+    "C:\\Users\\escuela03\\.nuget\\packages\\qrcoder\\1.8.0\\qrcoder.1.8.0.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\serilog.aspnetcore\\8.0.1\\serilog.aspnetcore.8.0.1.nupkg.sha512",
     "C:\\Users\\escuela03\\.nuget\\packages\\serilog.extensions.hosting\\8.0.0\\serilog.extensions.hosting.8.0.0.nupkg.sha512",
@@ -106,9 +107,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "ZuperBackend.Domain depende de System.IdentityModel.Tokens.Jwt (>= 7.1.0), pero no se encontró System.IdentityModel.Tokens.Jwt 7.1.0. System.IdentityModel.Tokens.Jwt 7.1.2 se resolvió en su lugar.",
-      "projectPath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
       "warningLevel": 1,
-      "filePath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+      "filePath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net8.0"

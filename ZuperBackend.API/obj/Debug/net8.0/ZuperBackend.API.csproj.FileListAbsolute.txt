@@ -165,3 +165,4 @@ C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.API\obj\Debug\net8.0\refint
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.API\obj\Debug\net8.0\ZuperBackend.API.pdb
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.API\obj\Debug\net8.0\ZuperBackend.API.genruntimeconfig.cache
 C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.API\obj\Debug\net8.0\ref\ZuperBackend.API.dll
+C:\Users\escuela03\Desktop\BACKENDZUPER\ZuperBackend.API\bin\Debug\net8.0\QRCoder.dll

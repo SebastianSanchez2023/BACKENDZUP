@@ -136,6 +136,9 @@ namespace ZuperBackend.Infrastructure.Migrations
                     b.Property<int>("ScanCount")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 

@@ -66,7 +66,7 @@ public interface IDiagnosisService
     /// 
     /// USO: Cuando necesitas renderizar las opciones de respuesta
     /// </summary>
-    Task<IEnumerable<DiagnosisOptionDto?>> GetNodeOptionsAsync(Guid nodeId);
+    Task<IEnumerable<DiagnosisOptionDto>> GetNodeOptionsAsync(Guid nodeId);
 
     /// <summary>
     /// Procesa la selección de una opción por el usuario.
@@ -134,4 +134,14 @@ public interface IDiagnosisService
     /// RETORNA: Árbol completo con todos los nodos y opciones estructurados
     /// </summary>
     Task<DiagnosisTreeDto> GetCompleteTreeAsync();
+
+    /// <summary>
+    /// Elimina un nodo y todas sus opciones asociadas.
+    /// </summary>
+    Task<bool> DeleteNodeAsync(Guid nodeId);
+
+    /// <summary>
+    /// Elimina una opción de respuesta específica.
+    /// </summary>
+    Task<bool> DeleteOptionAsync(Guid optionId);
 }

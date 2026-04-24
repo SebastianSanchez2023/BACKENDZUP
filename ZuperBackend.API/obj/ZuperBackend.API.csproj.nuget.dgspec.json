@@ -63,8 +63,8 @@
               "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Domain\\ZuperBackend.Domain.csproj": {
                 "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Domain\\ZuperBackend.Domain.csproj"
               },
-              "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj": {
-                "projectPath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj"
+              "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj"
               }
             }
           }
@@ -331,14 +331,14 @@
         }
       }
     },
-    "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj": {
+    "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
         "projectName": "ZuperBackend.Infrastructure",
-        "projectPath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\ZuperBackend.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\escuela03\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\escuela03\\Desktop\\BACKENDZUPER\\ZuperBackend.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
@@ -438,6 +438,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.8.0, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

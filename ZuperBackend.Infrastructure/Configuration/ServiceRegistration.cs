@@ -7,6 +7,7 @@ using ZuperBackend.Application.Services.Auth;
 using ZuperBackend.Infrastructure.Persistence;
 using ZuperBackend.Infrastructure.Services;
 using ZuperBackend.Infrastructure.Services.Auth;
+using ZuperBackend.Infrastructure.Services.Integrations;
 
 namespace ZuperBackend.Infrastructure.Configuration;
 
@@ -110,6 +111,13 @@ public static class ServiceRegistration
         services.AddTransient<IAssetService, AssetService>();
         services.AddTransient<IIncidentService, IncidentService>();
         services.AddTransient<IDiagnosisService, DiagnosisService>();
+        services.AddTransient<IQRCodeService, QRCodeService>();
+
+        // Integración con Zuper API
+        services.AddHttpClient<IZuperService, ZuperService>();
+        
+        // Integración con Zendesk
+        services.AddTransient<IZendeskService, ZendeskService>();
     }
 
     /// <summary>

@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using ZuperBackend.Application.DTOs.Diagnosis;
 using ZuperBackend.Application.Services;
@@ -139,7 +140,7 @@ public class DiagnosisService : IDiagnosisService
     /// 
     /// RETORNA: Opciones activas ordenadas por DisplayOrder
     /// </summary>
-    public async Task<IEnumerable<DiagnosisOptionDto?>> GetNodeOptionsAsync(Guid nodeId)
+    public async Task<IEnumerable<DiagnosisOptionDto>> GetNodeOptionsAsync(Guid nodeId)
     {
         try
         {
@@ -427,5 +428,29 @@ public class DiagnosisService : IDiagnosisService
         // TODO: Implementar cálculo real con DFS (Depth-First Search)
         // Por ahora retorna placeholder
         return 5;
+    }
+    public async Task<bool> DeleteNodeAsync(Guid nodeId)
+    {
+        var node = await _context.DiagnosisNodes
+            .Include(n => n.Options)
+            .FirstOrDefaultAsync(n => n.Id == nodeId);
+
+        if (node == null) return false;
+
+        _context.DiagnosisNodes.Remove(node);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteOptionAsync(Guid optionId)
+    {
+        var option = await _context.DiagnosisOptions
+            .FirstOrDefaultAsync(o => o.Id == optionId);
+
+        if (option == null) return false;
+
+        _context.DiagnosisOptions.Remove(option);
+        await _context.SaveChangesAsync();
+        return true;
     }
 }

@@ -12,6 +12,11 @@ public class AssetQRCode : BaseEntity
     public required Guid AssetId { get; set; }
 
     /// <summary>
+    /// Identificador del tenant propietario.
+    /// </summary>
+    public required Guid TenantId { get; set; }
+
+    /// <summary>
     /// Valor único del código QR (puede ser un UUID, hash o ID personalizado).
     /// </summary>
     public required string QRCode { get; set; }
